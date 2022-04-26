@@ -8,8 +8,16 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-2">{{ $category->title }}</h1>
-                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success"><i
+                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="text-success mr-2"><i
                                 class="fas fa-pen"></i></a>
+                        <form action="{{ route('admin.categories.destroy', $category->id) }}"
+                              method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="border-0 bg-transparent">
+                                <i class="fas fa-trash text-danger"></i>
+                            </button>
+                        </form>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
