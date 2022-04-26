@@ -26,8 +26,9 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form method="post" action="#" class="w-25">
+                        <form method="post" action="{{ route('admin.categories.update', $category->id) }}" class="w-25">
                             @csrf
+                            @method('patch')
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" placeholder="Название категории"
                                 value="{{ $category->title }}">
