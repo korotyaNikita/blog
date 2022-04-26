@@ -27,8 +27,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::get('/', IndexController::class)->name('admin.categories.index');
         Route::get('/create', CreateController::class)->name('admin.categories.create');
         Route::post('/', StoreController::class)->name('admin.categories.store');
-        /*Route::get('/{category}', ShowController::class)->name('admin.categories.show');
-        Route::get('/{category}/edit', EditController::class)->name('admin.categories.edit');
+        Route::get('/{category}', ShowController::class)->name('admin.categories.show');
+        /*Route::get('/{category}/edit', EditController::class)->name('admin.categories.edit');
         Route::patch('/{category}', UpdateController::class)->name('admin.categories.update');
         Route::delete('/{category}', DestroyController::class)->name('admin.categories.destroy');*/
     });
