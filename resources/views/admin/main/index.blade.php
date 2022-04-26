@@ -1,202 +1,96 @@
-@extends('layouts.main')
-
+@extends('admin.layouts.main')
 @section('content')
-<main class="blog">
-    <div class="container">
-        <h1 class="edica-page-title" data-aos="fade-up">Blog</h1>
-        <section class="featured-posts-section">
-            <div class="row">
-                <div class="col-md-4 fetured-post blog-post" data-aos="fade-right">
-                    <div class="blog-post-thumbnail-wrapper">
-                        <img src="{{ asset('assets/images/blog_1.jpg') }}" alt="blog post">
-                    </div>
-                    <p class="blog-post-category">Blog post</p>
-                    <a href="#!" class="blog-post-permalink">
-                        <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
-                    <div class="blog-post-thumbnail-wrapper">
-                        <img src="{{ asset('assets/images/blog_2.jpg') }}" alt="blog post">
-                    </div>
-                    <p class="blog-post-category">Blog post</p>
-                    <a href="#" class="blog-post-permalink">
-                        <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 fetured-post blog-post" data-aos="fade-left">
-                    <div class="blog-post-thumbnail-wrapper">
-                        <img src="{{ asset('assets/images/blog_3.jpg') }}" alt="blog post">
-                    </div>
-                    <p class="blog-post-category">Blog post</p>
-                    <a href="#" class="blog-post-permalink">
-                        <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-8">
-                <section>
-                    <div class="row blog-post-row">
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_4.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_5.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row blog-post-row">
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_6.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_7.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row blog-post-row">
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_8.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_9.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row blog-post-row">
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_10.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                        <div class="col-md-6 blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
-                                <img src="{{ asset('assets/images/blog_11.jpg') }}" alt="blog post">
-                            </div>
-                            <p class="blog-post-category">Blog post</p>
-                            <a href="#!" class="blog-post-permalink">
-                                <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-4 sidebar" data-aos="fade-left">
-                <div class="widget widget-post-carousel">
-                    <h5 class="widget-title">Post Lists</h5>
-                    <div class="post-carousel">
-                        <div id="carouselId" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselId" data-slide-to="1"></li>
-                                <li data-target="#carouselId" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner" role="listbox">
-                                <figure class="carousel-item active">
-                                    <img src="{{ asset('assets/images/blog_widget_carousel.jpg') }}" alt="First slide">
-                                    <figcaption class="post-title">
-                                        <a href="#!">Front becomes an official Instagram Marketing Partner</a>
-                                    </figcaption>
-                                </figure>
-                                <figure class="carousel-item">
-                                    <img src="{{ asset('assets/images/blog_7.jpg') }}" alt="First slide">
-                                    <figcaption class="post-title">
-                                        <a href="#!">Front becomes an official Instagram Marketing Partner</a>
-                                    </figcaption>
-                                </figure>
-                                <div class="carousel-item">
-                                    <img src="{{ asset('assets/images/blog_5.jpg') }}" alt="First slide">
-                                    <figcaption class="post-title">
-                                        <a href="#!">Front becomes an official Instagram Marketing Partner</a>
-                                    </figcaption>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget widget-post-list">
-                    <h5 class="widget-title">Post List</h5>
-                    <ul class="post-list">
-                        <li class="post">
-                            <a href="#!" class="post-permalink media">
-                                <img src="{{ asset('assets/images/blog_widget_1.jpg') }}" alt="blog post">
-                                <div class="media-body">
-                                    <h6 class="post-title">Front becomes an official Instagram Marketing Partner</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="post">
-                            <a href="#!" class="post-permalink media">
-                                <img src="{{ asset('assets/images/blog_widget_2.jpg') }}" alt="blog post">
-                                <div class="media-body">
-                                    <h6 class="post-title">Front becomes an official Instagram Marketing Partner</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="post">
-                            <a href="#!" class="post-permalink media">
-                                <img src="{{ asset('assets/images/blog_widget_3.jpg') }}" alt="blog post">
-                                <div class="media-body">
-                                    <h6 class="post-title">Front becomes an official Instagram Marketing Partner</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="post">
-                            <a href="#!" class="post-permalink media">
-                                <img src="{{ asset('assets/images/blog_widget_4.jpg') }}" alt="blog post">
-                                <div class="media-body">
-                                    <h6 class="post-title">Front becomes an official Instagram Marketing Partner</h6>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="widget">
-                    <h5 class="widget-title">Categories</h5>
-                    <img src="{{ asset('assets/images/blog_widget_categories.jpg') }}" alt="categories" class="w-100">
-                </div>
-            </div>
-        </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content-header -->
 
-</main>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>150</h3>
+
+                            <p>New Orders</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>Bounce Rate</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>User Registrations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Unique Visitors</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
