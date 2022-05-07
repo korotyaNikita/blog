@@ -63,6 +63,16 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="form-group w-25">
+                                <label>Выберите категирию</label>
+                                <select name="category_id" class="custom-select">
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ $category->id == old('category_id') ? ' selected' : '' }}
+                                        >{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Добавить</button>
                             </div>
