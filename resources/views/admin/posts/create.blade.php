@@ -63,13 +63,29 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group w-25">
+                            <div class="form-group w-50">
                                 <label>Выберите категирию</label>
                                 <select name="category_id" class="custom-select">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}"
                                             {{ $category->id == old('category_id') ? ' selected' : '' }}
-                                        >{{ $category->title }}</option>
+                                        >
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Тэги</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple"
+                                        data-placeholder="Выберите тэги"
+                                        style="width: 100%;">
+                                    @foreach($tags as $tag)
+                                        <option value="{{ $tag->id }}"
+                                            {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }}
+                                        >
+                                            {{ $tag->title }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
