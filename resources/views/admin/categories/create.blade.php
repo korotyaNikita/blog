@@ -29,7 +29,8 @@
                         <form method="post" action="{{ route('admin.categories.store') }}" class="w-25">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Название категории">
+                                <input type="text" class="form-control" name="title" placeholder="Название категории"
+                                value="{{ old('title') }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

@@ -27,4 +27,13 @@ class UpdateRequest extends FormRequest
             'title' => 'required|string|unique:categories,title'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле необходимо для заполнения',
+            'title.string' => 'Название должно быть строкой',
+            'title.unique' => 'Категория с таким названием уже существует',            
+        ];
+    }
 }

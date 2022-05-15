@@ -31,7 +31,7 @@
                             @method('patch')
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" placeholder="Название тега"
-                                value="{{ $tag->title }}">
+                                value="{{ old('title', $tag->title) }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
