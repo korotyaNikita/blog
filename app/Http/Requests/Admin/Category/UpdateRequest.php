@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|unique:categories,title'
+            'title' => 'required|string'
         ];
     }
 
@@ -32,8 +32,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title.required' => 'Это поле необходимо для заполнения',
-            'title.string' => 'Название должно быть строкой',
-            'title.unique' => 'Категория с таким названием уже существует',            
+            'title.string' => 'Название должно быть строкой',            
         ];
     }
 }
