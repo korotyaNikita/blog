@@ -31,8 +31,15 @@
                             @method('patch')
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Имя пользователя"
-                                value="{{ $user->name }}">
+                                value="{{ old('name', $user->name) }}">
                                 @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Имя пользователя"
+                                value="{{ old('email', $user->email) }}">
+                                @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
