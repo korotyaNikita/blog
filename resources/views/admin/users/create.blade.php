@@ -36,16 +36,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Имя пользователя"
+                                <input type="email" class="form-control" name="email" placeholder="email"
                                 value="{{ old('email') }}">
                                 @error('email')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Имя пользователя"
-                                value="{{ old('password') }}">
-                                @error('password')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
