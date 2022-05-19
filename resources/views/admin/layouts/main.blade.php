@@ -42,7 +42,7 @@
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <input class="btn btn-outline-primary" type="submit" value="Выйти">
+                        <input class="btn btn-outline-primary" type="submit" value="Вийти">
                     </form>
                 </li>
             </ul>

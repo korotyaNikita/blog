@@ -4,10 +4,26 @@
     <div class="sidebar">
         <ul class="pt-3 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+                <a href="{{ route('admin.main.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                        Головна
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.users.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Користувачі
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.posts.index') }}" class="nav-link">
                     <i class="nav-icon far fa-clipboard"></i>
                     <p>
-                        Посты
+                        Пости
                     </p>
                 </a>
             </li>
@@ -15,7 +31,7 @@
                 <a href="{{ route('admin.categories.index') }}" class="nav-link">
                     <i class="nav-icon far fa-th-list"></i>
                     <p>
-                        Категории
+                        Категорії
                     </p>
                 </a>
             </li>
@@ -24,14 +40,6 @@
                     <i class="nav-icon fas fa-tags"></i>
                     <p>
                         Теги
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('admin.users.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-users"></i>
-                    <p>
-                        Пользователи
                     </p>
                 </a>
             </li>
