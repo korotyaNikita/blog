@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('personal.comment.index') }}" class="nav-link">
+                <a href="{{ route('personal.comments.index') }}" class="nav-link">
                     <i class="nav-icon far fa-comment"></i>
                     <p>
                         Коментарі
