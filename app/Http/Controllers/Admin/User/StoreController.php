@@ -4,13 +4,8 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
-use App\Mail\User\PasswordMail;
-use App\Models\User;
+use App\Jobs\StoreUserJob;
 use Exception;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 class StoreController extends Controller
@@ -20,11 +15,7 @@ class StoreController extends Controller
         try {
             DB::beginTransaction();
             $data = $request->validated();
-            $password = Str::random(10);
-            $data['password'] = Hash::make($password);
-            $user = User::create($data);
-            Mail::to($data['email'])->send(new PasswordMail($password));
-            event(new Registered($user));
+            StoreUserJob::dispatch($data);
             DB::commit();
             return redirect()->route('admin.users.index');
         } catch(Exception $exception) {
