@@ -11,7 +11,11 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $tags = Tag::all();
+        try {
+            $tags = Tag::paginate(8);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.tags.index', compact('tags'));
     }
 }

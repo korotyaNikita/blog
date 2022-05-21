@@ -13,11 +13,15 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $data = [];
-        $data['usersCount'] = User::all()->count();
-        $data['postsCount'] = Post::all()->count();
-        $data['categoriesCount'] = Category::all()->count();
-        $data['tagsCount'] = Tag::all()->count();
+        try {
+            $data = [];
+            $data['usersCount'] = User::all()->count();
+            $data['postsCount'] = Post::all()->count();
+            $data['categoriesCount'] = Category::all()->count();
+            $data['tagsCount'] = Tag::all()->count();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.main.index', compact('data'));
     }
 }

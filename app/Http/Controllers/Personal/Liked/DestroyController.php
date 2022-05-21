@@ -13,7 +13,11 @@ class DestroyController extends Controller
 {
     public function __invoke(Post $post)
     {
-        auth()->user()->likedPosts()->detach($post->id);
+        try {
+            auth()->user()->likedPosts()->detach($post->id);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('personal.liked.index');
     }
 }

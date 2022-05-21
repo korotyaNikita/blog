@@ -11,8 +11,12 @@ class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
-        $data = $request->validated();
-        Tag::create($data);
+        try {
+            $data = $request->validated();
+            Tag::create($data);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('admin.tags.index');
     }
 }

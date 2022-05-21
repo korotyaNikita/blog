@@ -10,7 +10,11 @@ class DestroyController extends BaseController
 {
     public function __invoke(Post $post)
     {
-        $post->delete();
+        try {
+            $post->delete();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('admin.posts.index');
     }
 }

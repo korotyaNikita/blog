@@ -10,7 +10,11 @@ class DestroyController extends Controller
 {
     public function __invoke(User $user)
     {
-        $user->delete();
+        try {
+            $user->delete();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('admin.users.index');
     }
 }

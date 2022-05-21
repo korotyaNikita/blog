@@ -10,7 +10,11 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $users = User::all();
+        try {
+            $users = User::paginate(8);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.users.index', compact('users'));
     }
 }

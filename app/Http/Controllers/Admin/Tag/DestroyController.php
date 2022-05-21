@@ -11,7 +11,11 @@ class DestroyController extends Controller
 {
     public function __invoke(Tag $tag)
     {
-        $tag->delete();
+        try {
+            $tag->delete();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('admin.tags.index');
     }
 }

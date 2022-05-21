@@ -45,6 +45,11 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('personal.main.index') }}">{{ auth()->user()->name }}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <input class="btn btn-outline-primary" type="submit" value="Вийти">

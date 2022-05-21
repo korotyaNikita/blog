@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Personal\Comment;
+namespace App\Http\Controllers\Post\Like;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Personal\Comment\UpdateRequest;
+use App\Http\Requests\Post\Comment\StoreRequest;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
@@ -12,19 +12,18 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class UpdateController extends Controller
+class StoreController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Comment $comment)
+    public function __invoke(Post $post)
     {
         try {
             DB::beginTransaction();
-            $data = $request->validated();
-            $comment->update($data);
+            auth()->user()->likedPosts()->toggle($post->id);
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
-            abort(500);
+            abort(404);
         }
-        return redirect()->route('personal.comments.index');
+        return redirect()->back();
     }
 }
