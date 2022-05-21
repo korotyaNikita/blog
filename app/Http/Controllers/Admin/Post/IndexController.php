@@ -10,7 +10,11 @@ class IndexController extends BaseController
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        try {
+            $posts = Post::paginate(8);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.posts.index', compact('posts'));
     }
 }

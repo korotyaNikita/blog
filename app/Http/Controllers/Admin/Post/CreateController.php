@@ -11,8 +11,12 @@ class CreateController extends BaseController
 {
     public function __invoke()
     {
-        $categories = Category::all();
-        $tags = Tag::all();
+        try {
+            $categories = Category::all();
+            $tags = Tag::all();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.posts.create', compact('categories', 'tags'));
     }
 }

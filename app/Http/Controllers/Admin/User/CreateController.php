@@ -10,7 +10,11 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        $roles = User::getRoles();
+        try {
+            $roles = User::getRoles();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.users.create', compact('roles'));
     }
 }

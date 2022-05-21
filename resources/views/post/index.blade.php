@@ -12,7 +12,24 @@
                                 <div class="blog-post-thumbnail-wrapper">
                                     <img src="{{ asset('storage/' . $post->preview_image) }}" alt="blog post">
                                 </div>
-                                <p class="blog-post-category">{{ $post->category->title }}</p>
+                                <div class="d-flex justify-content-between">
+                                    <p class="blog-post-category">{{ $post->category->title }}</p>
+                                    @auth()
+                                        <form action="{{ route('post.likes.store', $post->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="border-0 bg-transparent">
+                                                <i class="fa{{ auth()->user()->likedPosts->contains($post->id) ? 's' : 'r' }} fa-heart"></i>
+                                            </button>
+                                            <span>{{ $post->liked_users_count }}</span>
+                                        </form>
+                                    @endauth
+                                    @guest()
+                                        <div>
+                                            <i class="far fa-heart"></i>
+                                            <span>{{ $post->liked_users_count }}</span>
+                                        </div>
+                                    @endguest
+                                </div>
                                 <h6 class="blog-post-title">{{ $post->title }}</h6>
                             </a>
                         </div>
@@ -27,6 +44,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <section>
+                        <h5 class="widget-title mb-3">Випадкові пости</h5>
                         <div class="row blog-post-row">
                             @foreach($randomPosts as $post)
                                 <div class="col-md-6 blog-post" data-aos="fade-up">
@@ -34,7 +52,24 @@
                                         <div class="blog-post-thumbnail-wrapper">
                                             <img src="{{ asset('storage/' . $post->preview_image) }}" alt="blog post">
                                         </div>
-                                        <p class="blog-post-category">{{ $post->category->title }}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="blog-post-category">{{ $post->category->title }}</p>
+                                            @auth()
+                                                <form action="{{ route('post.likes.store', $post->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="fa{{ auth()->user()->likedPosts->contains($post->id) ? 's' : 'r' }} fa-heart"></i>
+                                                    </button>
+                                                    <span>{{ $post->liked_users_count }}</span>
+                                                </form>
+                                            @endauth
+                                            @guest()
+                                                <div>
+                                                    <i class="far fa-heart"></i>
+                                                    <span>{{ $post->liked_users_count }}</span>
+                                                </div>
+                                            @endguest
+                                        </div>
                                         <h6 class="blog-post-title">{{ $post->title }}</h6>
                                     </a>
                                 </div>
@@ -60,9 +95,18 @@
                         </ul>
                     </div>
                     <div class="widget">
-                        <h5 class="widget-title">Categories</h5>
-                        <img src="{{ asset('assets/images/blog_widget_categories.jpg') }}" alt="categories"
-                             class="w-100">
+                        <h5 class="widget-title">Категорії</h5>
+                        <ul class="post-list">
+                            @foreach($categories as $category)
+                                <li class="post">
+                                    <a href="{{ route('category.posts.index', $category->id) }}" class="post-permalink media">
+                                        <div class="media-body">
+                                            <h6 class="post-title">{{ $category->title }}</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

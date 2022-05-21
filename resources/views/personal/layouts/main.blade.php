@@ -6,7 +6,8 @@
     <title>AdminLTE 3 | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
@@ -26,7 +27,8 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60"
+             width="60">
     </div>
 
     <!-- Navbar -->
@@ -43,6 +45,13 @@
                     <a class="nav-link" href="{{ route('main.index') }}" role="button">Блог</a>
                 </li>
             </ul>
+            @if(auth()->user()->role === 0)
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.main.index') }}">Панель адміна</a>
+                    </li>
+                </ul>
+            @endif
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
@@ -91,7 +100,7 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#summernote').summernote({
             toolbar: [
                 // [groupName, [list of button]]

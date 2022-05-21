@@ -14,7 +14,11 @@ class DestroyController extends Controller
 {
     public function __invoke(Comment $comment)
     {
-        $comment->delete();
+        try {
+            $comment->delete();
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return redirect()->route('personal.comments.index');
     }
 }

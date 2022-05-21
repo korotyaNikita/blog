@@ -25,6 +25,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], 
     Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
         Route::post('/', StoreController::class)->name('post.comments.store');
     });
+
+    Route::group(['namespace' => 'Like', 'prefix' => '{post}/likes'], function () {
+        Route::post('/', StoreController::class)->name('post.likes.store');
+    });
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Category', 'prefix' => 'categories'], function () {
+    Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function () {
+        Route::get('/', IndexController::class)->name('category.posts.index');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
@@ -79,7 +89,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 
     Route::group(['namespace' => 'User', 'prefix' => 'users'], function () {
-    Route::get('/', IndexController::class)->name('admin.users.index');
+        Route::get('/', IndexController::class)->name('admin.users.index');
         Route::get('/create', CreateController::class)->name('admin.users.create');
         Route::post('/', StoreController::class)->name('admin.users.store');
         Route::get('/{user}', ShowController::class)->name('admin.users.show');

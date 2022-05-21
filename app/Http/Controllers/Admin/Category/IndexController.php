@@ -10,7 +10,11 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
+        try {
+            $categories = Category::paginate(8);
+        } catch (\Exception $exception) {
+            abort(500);
+        }
         return view('admin.categories.index', compact('categories'));
     }
 }

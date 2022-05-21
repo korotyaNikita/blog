@@ -64,7 +64,9 @@
                 </div>
             </div>
             <!-- /.row -->
-
+            <div class="row">
+                {{ $comments->links() }}
+            </div>
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
