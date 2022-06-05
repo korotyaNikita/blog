@@ -31,8 +31,8 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Это поле необходимо для заполнения',
-            'title.string' => 'Название должно быть строкой',           
+            'title.required' => 'Це поле необхідно заповнити',
+            'title.string' => 'Назва має відповідати строковому типу',
         ];
     }
 }

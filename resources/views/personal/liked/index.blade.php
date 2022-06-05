@@ -32,8 +32,8 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Название</th>
-                                    <th colspan="2">Действия</th>
+                                    <th>Назва</th>
+                                    <th colspan="2">Дії</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,7 +41,7 @@
                                     <tr>
                                         <td>{{ $post->id }}</td>
                                         <td>{{ $post->title }}</td>
-                                        <td><a href="{{ route('admin.posts.show', $post->id) }}"><i
+                                        <td><a href="{{ route('posts.show', $post->id) }}"><i
                                                     class="far fa-eye"></i></a></td>
                                         <td>
                                             <form action="{{ route('personal.liked.destroy', $post->id) }}"

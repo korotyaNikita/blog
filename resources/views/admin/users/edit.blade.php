@@ -31,21 +31,21 @@
                             @csrf
                             @method('patch')
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Имя пользователя"
+                                <input type="text" class="form-control" name="name" placeholder="Ім'я користувача"
                                 value="{{ old('name', $user->name) }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Имя пользователя"
+                                <input type="email" class="form-control" name="email" placeholder="email"
                                 value="{{ old('email', $user->email) }}">
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Выберите роль</label>
+                                <label>Оберіть роль</label>
                                 <select name="role" class="custom-select">
                                     @foreach($roles as $id => $role)
                                         <option value="{{ $id }}"
@@ -62,7 +62,7 @@
                             <div class="form-group w-50">
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                             </div>
-                            <button type="submit" class="btn btn-primary">Обновить</button>
+                            <button type="submit" class="btn btn-primary">Оновити</button>
                         </form>
                     </div>
                 </div>

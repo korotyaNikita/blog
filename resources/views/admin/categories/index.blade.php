@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категории</h1>
+                        <h1 class="m-0">Категорії</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.categories.create') }}" class="btn btn-block bg-gradient-primary">Добавить</a>
+                        <a href="{{ route('admin.categories.create') }}" class="btn btn-block bg-gradient-primary">Додати</a>
                     </div>
                 </div>
                 <div class="row">
@@ -37,8 +37,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название</th>
-                                        <th colspan="3">Действия</th>
+                                        <th>Назва</th>
+                                        <th colspan="3">Дії</th>
                                     </tr>
                                     </thead>
                                     <tbody>

@@ -30,14 +30,14 @@
                         <form method="post" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group w-25">
-                                <input type="text" class="form-control" name="title" placeholder="Название поста"
+                                <input type="text" class="form-control" name="title" placeholder="Назва посту"
                                        value="{{ old('title') }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <textarea id="summernote" name="content">
+                                <textarea id="summernote" name="content" style="height: 500px">
                                     {{ old('content') }}
                                 </textarea>
                                 @error('content')
@@ -45,27 +45,27 @@
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Добавить превью</label>
+                                <label>Додати превью</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="file" name="preview_image">
-                                    <label class="custom-file-label" for="file">Виберите изображение</label>
+                                    <label class="custom-file-label" for="file">Оберіть зображення</label>
                                 </div>
                                 @error('preview_image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Добавить главное изображение</label>
+                                <label>Додати головне зображення</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="file" name="main_image">
-                                    <label class="custom-file-label" for="file">Виберите изображение</label>
+                                    <label class="custom-file-label" for="file">Оберіть зображення</label>
                                 </div>
                                 @error('main_image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Выберите категирию</label>
+                                <label>Оберіть категорію</label>
                                 <select name="category_id" class="custom-select">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -80,9 +80,9 @@
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Тэги</label>
+                                <label>Теги</label>
                                 <select class="select2" name="tag_ids[]" multiple="multiple"
-                                        data-placeholder="Выберите тэги"
+                                        data-placeholder="Оберіть теги"
                                         style="width: 100%;">
                                     @foreach($tags as $tag)
                                         <option value="{{ $tag->id }}"
@@ -97,7 +97,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+                                <button type="submit" class="btn btn-primary">Додати</button>
                             </div>
                         </form>
                     </div>

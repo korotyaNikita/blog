@@ -30,7 +30,7 @@
                         <form method="post" action="{{ route('admin.users.store') }}" class="w-25">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Имя пользователя"
+                                <input type="text" class="form-control" name="name" placeholder="Ім'я користувача"
                                 value="{{ old('name') }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
@@ -44,7 +44,7 @@
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label>Выберите роль</label>
+                                <label>Оберіть роль</label>
                                 <select name="role" class="custom-select">
                                     @foreach($roles as $id => $role)
                                         <option value="{{ $id }}"
@@ -58,7 +58,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <button type="submit" class="btn btn-primary">Додати</button>
                         </form>
                     </div>
                 </div>

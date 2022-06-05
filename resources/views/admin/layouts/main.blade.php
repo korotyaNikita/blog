@@ -106,7 +106,8 @@
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
-            ]
+            ],
+            height: 250,
         });
         $(function () {
             bsCustomFileInput.init();
