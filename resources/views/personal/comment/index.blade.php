@@ -32,8 +32,9 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Название</th>
-                                    <th colspan="2">Действия</th>
+                                    <th>Коментар</th>
+                                    <th>Пост</th>
+                                    <th colspan="2">Дії</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,6 +42,7 @@
                                     <tr>
                                         <td>{{ $comment->id }}</td>
                                         <td>{{ $comment->message }}</td>
+                                        <td><a href="{{ route('posts.show', $comment->post_id) }}"> {{ $comment->post->title }} </a></td>
                                         <td><a href="{{ route('personal.comments.edit', $comment->id) }}"
                                                 class="text-success"><i
                                                     class="fas fa-pen"></i></a></td>

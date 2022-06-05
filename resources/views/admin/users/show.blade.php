@@ -10,14 +10,16 @@
                         <h1 class="m-0 mr-2">{{ $user->name }}</h1>
                         <a href="{{ route('admin.users.edit', $user->id) }}" class="text-success mr-2"><i
                                 class="fas fa-pen"></i></a>
-                        <form action="{{ route('admin.users.destroy', $user->id) }}"
-                              method="POST">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="border-0 bg-transparent">
-                                <i class="fas fa-trash text-danger"></i>
-                            </button>
-                        </form>
+                        @if($user->role !== 0)
+                            <form action="{{ route('admin.users.destroy', $user->id) }}"
+                                  method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="border-0 bg-transparent">
+                                    <i class="fas fa-trash text-danger"></i>
+                                </button>
+                            </form>
+                        @endif
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -46,7 +48,7 @@
                                         <td>{{ $user->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Имя</td>
+                                        <td>Ім'я</td>
                                         <td>{{ $user->name }}</td>
                                     </tr>
                                     <tr>

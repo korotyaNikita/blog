@@ -22,7 +22,7 @@ class StoreController extends Controller
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
-            abort(404);
+            abort(500);
         }
         return redirect()->back();
     }

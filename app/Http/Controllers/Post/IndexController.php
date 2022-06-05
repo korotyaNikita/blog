@@ -14,7 +14,8 @@ class IndexController extends Controller
         try {
             $categories = Category::all();
             $posts = Post::paginate(6);
-            $randomPosts = Post::get()->random(4);
+            $postsCount = $posts->count();
+            $randomPosts = $postsCount >= 4 ? Post::get()->random(4) : Post::all()->take($postsCount);
             $likedPosts = Post::withCount('likedUsers')->orderBy('liked_users_count', 'DESC')->get()->take(4);
         } catch (\Exception $exception) {
             abort(500);

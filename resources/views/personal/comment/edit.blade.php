@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Редагування комментаря</h1>
+                    <h1 class="m-0">Редагування коментаря</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('personal.main.index') }}">Головна</a></li>
-                        <li class="breadcrumb-item active">Редагування комментаря</li>
+                        <li class="breadcrumb-item active">Редагування коментаря</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -35,7 +35,7 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Обновить</button>
+                        <button type="submit" class="btn btn-primary">Оновити</button>
                     </form>
                 </div>
             </div>

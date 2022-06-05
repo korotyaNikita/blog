@@ -46,7 +46,7 @@
                                         <td>{{ $tag->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Название</td>
+                                        <td>Назва</td>
                                         <td>{{ $tag->title }}</td>
                                     </tr>
                                     </tbody>

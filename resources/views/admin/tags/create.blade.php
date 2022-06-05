@@ -30,13 +30,13 @@
                         <form method="post" action="{{ route('admin.tags.store') }}" class="w-25">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Название тега"
+                                <input type="text" class="form-control" name="title" placeholder="Назва тега"
                                 value="{{ old('title') }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <button type="submit" class="btn btn-primary">Додати</button>
                         </form>
                     </div>
                 </div>

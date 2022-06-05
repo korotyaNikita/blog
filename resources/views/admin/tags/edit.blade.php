@@ -31,13 +31,13 @@
                             @csrf
                             @method('patch')
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Название тега"
+                                <input type="text" class="form-control" name="title" placeholder="Назва тега"
                                 value="{{ old('title', $tag->title) }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Обновить</button>
+                            <button type="submit" class="btn btn-primary">Оновити</button>
                         </form>
                     </div>
                 </div>

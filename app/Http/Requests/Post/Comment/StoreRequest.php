@@ -31,8 +31,8 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'message.required' => 'Это поле необходимо для заполнения',
-            'message.string' => 'Сообщение должно быть строкой',
+            'message.required' => 'Це поле необхідно заповнити',
+            'message.string' => 'Повідомлення повинно буди рядком',
         ];
     }
 }

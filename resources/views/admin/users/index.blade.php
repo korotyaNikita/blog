@@ -26,7 +26,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.users.create') }}" class="btn btn-block bg-gradient-primary">Добавить</a>
+                        <a href="{{ route('admin.users.create') }}" class="btn btn-block bg-gradient-primary">Додати</a>
                     </div>
                 </div>
                 <div class="row">
@@ -37,8 +37,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Имя</th>
-                                        <th colspan="3">Действия</th>
+                                        <th>Ім'я</th>
+                                        <th colspan="3">Дії</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -52,14 +52,16 @@
                                                    class="text-success"><i
                                                         class="fas fa-pen"></i></a></td>
                                             <td>
-                                                <form action="{{ route('admin.users.destroy', $user->id) }}"
-                                                      method="POST">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="submit" class="border-0 bg-transparent">
-                                                        <i class="fas fa-trash text-danger"></i>
-                                                    </button>
-                                                </form>
+                                                @if($user->role !== 0)
+                                                    <form action="{{ route('admin.users.destroy', $user->id) }}"
+                                                          method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="border-0 bg-transparent">
+                                                            <i class="fas fa-trash text-danger"></i>
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

@@ -34,14 +34,14 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Это поле необходимо для заполнения',
-            'name.string' => 'Имя должно быть строкой',
-            'email.required' => 'Это поле необходимо для заполнения', 
-            'email.string' => 'Почта должна быть строкой',
-            'email.email' => 'Ваша почта должна соответствовать формату example@some.domain',
-            'email.unique' => 'Пользователь с таким email уже существует',
-            'role.required' => 'Это поле необходимо для заполнения',
-            'role.integer' => 'Значение должно быть целочисленным',          
+            'name.required' => 'Це поле необхідно заповнити',
+            'name.string' => 'Ім\'я має відповідати рядковому типу',
+            'email.required' => 'Це поле необхідно заповнити',
+            'email.string' => 'Пошта має відповідати рядковому типу',
+            'email.email' => 'Пошта має відповідати формату example@some.domain',
+            'email.unique' => 'Користувач з таким email вже існує',
+            'role.required' => 'Це поле неохідно заповнити',
+            'role.integer' => 'Значення має бути цілочисельним',
         ];
     }
 }

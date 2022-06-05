@@ -46,7 +46,7 @@
                                         <td>{{ $category->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Название</td>
+                                        <td>Назва</td>
                                         <td>{{ $category->title }}</td>
                                     </tr>
                                     </tbody>
