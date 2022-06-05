@@ -13,15 +13,8 @@ class UpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request, Post $post)
     {
-        try {
-            DB::beginTransaction();
-            $data = $request->validated();
-            $post = $this->service->update($data, $post);
-            DB::commit();
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            abort(500);
-        }
+        $data = $request->validated();
+        $post = $this->service->update($data, $post);
         return redirect()->route('admin.posts.show', $post->id);
     }
 }
