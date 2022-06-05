@@ -13,15 +13,9 @@ class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $data = $request->validated();
-            $this->service->store($data);
-            DB::commit();
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            abort(500);
-        }
+
+        $data = $request->validated();
+        $this->service->store($data);
         return redirect()->route('admin.posts.index');
     }
 }
